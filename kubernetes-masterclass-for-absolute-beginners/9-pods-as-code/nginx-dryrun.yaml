@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   labels:
     run: nginx-yaml
+    editted-from: visual-studio-code
   name: nginx-yaml
 spec:
   containers:

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: htppppppd
+  name: htppppppd
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: htppppppd
+  strategy: 
+    type: Recreate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: htppppppd
+    spec:
+      containers:
+      - image: httpd:2.4.66
+        name: httpd
+        resources: {}
+status: {}
